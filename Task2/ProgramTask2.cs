@@ -39,9 +39,9 @@ namespace Task2
                         string ending;
                         string userInput;
                         int cardValue;
-                        if (i == 3) ending = "ей";
+                        if (i == 2) ending = "ей";
                         else ending = "ой";
-                        Console.Write($"Введи номинал {i}-{ending} карты: ");
+                        Console.Write($"Введи номинал {i +1}-{ending} карты: ");
 
                         userInput = Console.ReadLine();
                         if (int.TryParse(userInput, out cardValue) && cardValue > 1 && cardValue <= 10)
@@ -60,8 +60,8 @@ namespace Task2
                                     break;
                                 default:
                                     Console.WriteLine();
-                                    Console.WriteLine("Уверен? Охрана, у нас шулер!!!");  
-                                    guards = true;
+                                    Console.WriteLine("Такой карты нет! Сфокусируйся!");
+                                    i--;
                                     break;
                             }
                         }
